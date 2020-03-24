@@ -25,12 +25,11 @@ router.get("/home", (req, res) => {
    if(checkSession(req)){
     var selectQuery="select * from products";
     conn.query(selectQuery,function(err,data){
-        console.log(data);
         var obj={users:data}
         if(err){ 
             res.send(err);
         }else{
-            res.render('home',obj);
+            res.render('home.ejs',obj);
         }
    });
 }else{
@@ -40,12 +39,26 @@ router.get("/home", (req, res) => {
 
 
 router.get('/products',(req,res)=>{
-    if(checkSession(req)){
-        res.render('products.ejs');
+    // if(checkSession(req)){
+    //     res.render('products.ejs');
+    // }else{
+    //     res.redirect('login');
+    // }
+
+if(checkSession(req)){
+  conn.query('select * from categary',(err,data)=>{
+    if(!err){
+    res.render('products.ejs',{titles:data})
     }else{
-        res.redirect('login');
+      res.send(err);
     }
-})
+  })
+}else{
+  res.redirect('login');
+
+}
+
+});
 
 
 // get API End
