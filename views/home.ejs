@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body class="container-fluid">
+    <nav style="height: 150px;" class="navbar navbar-light bg-info">
+    <a class="navbar-brand text-light" href="#"> WebApp</a>
+    
+    <a href="/login" role="button" class="btn btn-danger">LogOut</a>
+  </nav>
+
+  <div class="row">
+    <div class="col-4 align-self-center">
+      
+    </div>
+    <div class="col-3">
+       <div class="card card-inverse card-danger">
+        <ul class="nav nav-tabs bg-dark " style="text-decoration-color: lightblue;">
+            <li class="nav-item">
+              <a class="nav-link " href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Disabled</a>
+            </li>
+          </ul>
+          
+       </div>
+       
+    </div>
+    
+    <hr class="my-4">
+ </div>
+ <p style="margin-left: 900px; text-decoration: blue;">Add new Products  <a href="/products" role="button" class="btn btn-primary" >New Data</a></p>
+<div class="row container-fluid " style="margin-left: 280px;">
+
+  <div class="col-md-7 " style="border: 1px solid black;">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">P/Name</th>
+          <th scope="col">UnitPrice</th>
+          <th scope="col">Brand</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(function(user){ %>
+          <tr>
+            <td><%= user.Id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.unitprice %></td>
+            <td><%= user.brand %></td>
+            <% })%>
+          </tr>
+      </tbody>
+    </table>
+    </table>
+
+  </div>
+</div>
+
+</body>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
